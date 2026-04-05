@@ -1,0 +1,122 @@
+ITEM | Caesar Salad | price= | cal= | desc=Romaine, Parmesan, garlic bread crouton, original pizza man Caesar dressing
+ITEM | Shaved Brussels Sprouts Salad | price= | cal= | desc=Arugula, Door County dried cherries, ricotta salata, toasted hazelnuts, charred lemon vinaigrette
+ITEM | 12" Original Thin Crust | price= | cal= | desc=
+
+GROUP: Starters
+ITEM | Garlic Bread | price= | cal= | desc=Side of marinara, with cheese for an additional charge
+ITEM | Eggplant Fries | price= | cal= | desc=Buttermilk-marinated, creamy parmesan dressing, marinara
+ITEM | Parmesan Truffle Fries | price= | cal= | desc=Truffle aïoli, parmesan, sea salt
+ITEM | Meatball Marinara | price= | cal= | desc=4 house made meatballs made of ground beef and Vinny's Italian sausage, marinara
+ITEM | Oakland Escargot | price= | cal= | desc=
+ITEM | Mussels | price= | cal= | desc=
+ITEM | Crispy Brussels Sprouts | price= | cal= | desc=Bacon, parmesan, calabrian chili honey, herbs
+ITEM | Mozzarella Sticks | price= | cal= | desc=3 wonton wrapped with marinara
+ITEM | Grilled Calamari | price= | cal= | desc=Pepperoncini, marinara
+ITEM | Burrata Della Casa | price= | cal= | desc=Fresh mozzarella cheese filled with shreds of mozzarella infused in cream layered with prosciutto di parma served with crostini
+ITEM | Bruschetta Tradizionale | price= | cal= | desc=Diced roma tomato, garlic, basil, balsamic, and crostini drizzled with balsamic glaze
+ITEM | Regular Fries | price= | cal= | desc=
+ITEM | French Onion Soup | price= | cal= | desc=
+
+GROUP: Salads
+ITEM | Shaved Brussels Sprouts Salad | price= | cal= | desc=Arugula, Door County dried cherries, ricotta salata, toasted hazelnuts, charred lemon vinaigrette
+ITEM | Apple Salad | price= | cal= | desc=
+ITEM | Caesar Salad | price= | cal= | desc=Romaine, Parmesan, garlic bread crouton, original pizza man Caesar dressing
+ITEM | House Salad | price= | cal= | desc=Seasonal greens, crouton, cucumber, pickled carrots, red onion, tomato, herb ranch dressing
+
+GROUP: Extra Sauces/Dips
+ITEM | Side of Marinara | price= | cal= | desc=
+ITEM | Side of Ranch | price= | cal= | desc=
+ITEM | Side of Creamy Parmesan | price= | cal= | desc=
+ITEM | Side of Calabrian Hot Honey | price= | cal= | desc=
+ITEM | Side of Truffle Aioli | price= | cal= | desc=
+ITEM | Side of BBQ Sauce | price= | cal= | desc=
+
+GROUP: Pastas
+ITEM | Spaghetti + Meatballs | price= | cal= | desc=Italian red sauce, parmesan, herbs
+ITEM | Chicken Fettuccine Alfredo | price= | cal= | desc=Garlic cream sauce, parmesan
+ITEM | Shrimp Scampi | price= | cal= | desc=Linguine pasta 7 jumbo shrimp tail on, extra virgin olive oil, fresh garlic, fresh herbs in a white wine butter sauce
+ITEM | Spicy Rigatoni a La Vodka | price= | cal= | desc=Vodka sauce, Vinny's Italian sausage, Calabrian peppers, parmesan
+ITEM | Pesto Ravioli | price= | cal= | desc=
+ITEM | Carbonara | price= | cal= | desc=
+
+GROUP: Entrees
+ITEM | Chicken Parmesan | price= | cal= | desc=Italian red sauce, spaghetti, fresh mozzarella, parmesan
+ITEM | Chicken Marsala | price= | cal= | desc=Two lightly breaded chicken breasts topped with mushroom and onion creamy Marsala sauce served with sauteed Brussel sprouts
+ITEM | Scallops Risotto | price= | cal= | desc=
+ITEM | Grilled Salmon | price= | cal= | desc=
+ITEM | Filet Mignon | price= | cal= | desc=
+ITEM | Scallops Gnocchi | price= | cal= | desc=
+ITEM | Short Rib and Risotto | price= | cal= | desc=is a tender short ribs slowly braise on red wine and beer serve over saffron risotto Milanese
+ITEM | Blackened Combo | price= | cal= | desc=
+ITEM | Gnocchi A La Diavla | price= | cal= | desc=
+
+GROUP: BYO Pizza
+ITEM | 12" Original Thin Crust | price= | cal= | desc=
+ITEM | Pan Crust | price= | cal= | desc=
+ITEM | Deep Dish | price= | cal= | desc=
+ITEM | Gluten Free Crust | price= | cal= | desc=
+
+GROUP: 12" MKE Style Pizza
+ITEM | Pizza Man Special | price= | cal= | desc=Classic sauce, pepperoni, vinny's italian sausage, green pepper, yellow onion, mushroom, black olive
+ITEM | Milwaukee | price= | cal= | desc=Classic sauce, vinny's italian sausage, mushroom, yellow onion
+ITEM | Carnivoro | price= | cal= | desc=Classic sauce, pepperoni, Vinny's Italian sausage, salami, Canadian bacon
+ITEM | Bianca | price= | cal= | desc=Garlic cream sauce, cream cheese, mushroom, truffle oil, Parmesan, arugula
+ITEM | Veggie Supreme | price= | cal= | desc=Classic sauce, black olive, tomato, green pepper, mushroom, yellow onion
+ITEM | Margherita | price= | cal= | desc=Classic sauce, Roma tomatoes, fresh mozzarella, fresh basil, EVOO
+ITEM | BBQ Chicken | price= | cal= | desc=BBQ sauce, cheddar, chicken, cream cheese, red onion, pickled banana pepper, chives
+ITEM | Pesto Pig | price= | cal= | desc=Basil pesto, pancetta, tomato, red wine pickled onion, goat cheese, fresh basil
+ITEM | Atomica | price= | cal= | desc=Classic sauce, spicy soppressata, prosciutto, calabrian pepper, oregano, red onion, smoked provolone
+ITEM | Hawaiian | price= | cal= | desc=Classic sauce, Canadian bacon, grilled pineapple, cream cheese
+ITEM | King Roni | price= | cal= | desc=Classic sauce, pepperoni cups, diced pepperoni, pepperoni, Parmesan, chili flake, oregano
+ITEM | Topher | price= | cal= | desc=Classic sauce, vinny's italian sausage, calabrian chili honey, cream cheese, pickled jalapeño
+ITEM | Artichoke a La Mode | price= | cal= | desc=Classic sauce, artichoke, tomato, chopped garlic, basil, cream cheese
+ITEM | Shifty Pizza | price= | cal= | desc=
+ITEM | Di Mare | price= | cal= | desc=Choice of Sauce, Calamari, Shrimp, Crab Meat, Green Peppers, Red Onions, Diced Tomatoes, Cilantro
+
+GROUP: Kids
+ITEM | Kids Cheese Pizza | price= | cal= | desc=
+ITEM | Kids Buttered Noodles | price= | cal= | desc=
+ITEM | Kids Spaghetti with Red Sauce | price= | cal= | desc=
+ITEM | Kids Chicken Tenders | price= | cal= | desc=
+ITEM | Kids Fettuccine Alfredo | price= | cal= | desc=
+
+GROUP: Desserts
+ITEM | Italian Sorbet | price= | cal= | desc=
+ITEM | Cannoli | price= | cal= | desc=Canoli filling with sweet ricotta and chocolate chips
+ITEM | Tiramisu | price= | cal= | desc=Espresso-soaked ladyfingers, mascarpone cheese, shaved chocolate
+ITEM | Creme Brulee | price= | cal= | desc=
+ITEM | Creme Caramel | price= | cal= | desc=
+ITEM | Panna Cotta | price= | cal= | desc=
+ITEM | Chocolate Orange Mousse | price= | cal= | desc=
+ITEM | Cheesecake | price= | cal= | desc=
+
+GROUP: Antipasto
+ITEM | Pane D'Aglio | price= | cal= | desc=Garlic bread served with a side of marinara | add mozzarella $2
+ITEM | Viola Bites | price= | cal= | desc=Buttermilk eggplant fries - marinated, served with creamy parmesan dressing & marinara
+ITEM | Mozzaviva | price= | cal= | desc=3 Homemade wonton wrapped mozzarella sticks with marinara
+ITEM | Pomodoro Pop | price= | cal= | desc=4 large pork and veal meatballs with crostini
+ITEM | Parmigiano Truffle Fries | price= | cal= | desc=Truffle aïoli, parmesan, sea salt Fries
+ITEM | Bruschetta Tradizionale | price= | cal= | desc=Diced Roma Tomatoes, Garlic, Basil, topped on crostini and drizzled with balsamic glaze
+ITEM | Crispy Cavolo | price= | cal= | desc=Brussel sprouts Tossed in bacon, parmesan, herbs and Calabrian chili honey glaze
+ITEM | Zuppa Di Cipolle Francese | price= | cal= | desc=Rich beef broth simmered with white, red, and Vidalia onions, and leeks. Topped with golden Crostini and silky melted Swiss Cheese.
+
+GROUP: Insalata
+ITEM | Shaved Brussels Sprouts | price= | cal= | desc=Arugula, Door County dried cherries, ricotta salata, toasted hazelnuts, charred lemon vinaigrette
+ITEM | Insalata Di Mele | price= | cal= | desc=Arugula, Baby spinach, Goat cheese, Candy Walnuts, Dry cherries, Fresh apples, Champagne vinaigrette
+ITEM | Insalata Caesar | price= | cal= | desc=Romaine, Parmesan, Homemade Garlic croutons, tossed with pizza man Caesar dressing
+Add White anchovies +3
+ITEM | Insalata Di Casa | price= | cal= | desc=Seasonal greens, cucumber, red onion, tomato, balsamic vinaigrette
+
+GROUP: Panini
+ITEM | Pollo Verde | price= | cal= | desc=Grilled chicken breast layered with smoky mozzarella, vibrant pesto sauce, and juicy Roma tomatoes, all pressed to perfection in ciabatta bread.
+ITEM | Formaggi Divini | price= | cal= | desc=A cheese lover’s dream featuring a melty blend of fresh mozzarella, sharp cheddar, creamy Gouda, and smoky mozzarella, grilled in ciabatta bread for a golden, gooey finish.
+ITEM | Caprese D'Oro | price= | cal= | desc=A fresh take on tradition with ripe Roma tomatoes, creamy fresh mozzarella, and fragrant basil leaves, drizzled with extra virgin olive oil and pressed in ciabatta bread.
+ITEM | Turkey Arrosto Twist | price= | cal= | desc=Tender sliced turkey breast paired with sharp cheddar, crisp apple slices, and a zesty lemon aioli, all nestled in ciabatta bread for a delightful crunch.
+ITEM | Tonno Supremo | price= | cal= | desc=House-made tuna salad with fresh tomatoes, zesty lemon aioli, and melted cheddar cheese, grilled to perfection in ciabatta bread for a comforting classic.
+ITEM | Classico Smash Burger | price= | cal= | desc=A juicy 6 oz smashed beef patty topped with crisp lettuce, ripe tomatoes, onions, and melted cheddar cheese, served on a soft brioche bun.
+
+GROUP: Pasta
+ITEM | Spaghetti Di Nona & Polpetto | price= | cal= | desc=Al dente spaghetti tossed in our rich, homemade marinara sauce, served with three tender pork and veal meatballs for a hearty, comforting meal.
+ITEM | Fettuccine Crema Bella | price= | cal= | desc=Grilled chicken and fettuccine noodles enveloped in a velvety garlic cream sauce, delivering rich, comforting flavors in every bite.
+ITEM | Pollo Mediterraneo | price= | cal= | desc=Tender diced chicken breast tossed with linguine, fresh herbs, and extra virgin olive oil, finished with a hint of chili flakes for a subtle kick.
+ITEM | Quattro Formaggi Maccheroni | price= | cal= | desc=A decadent blend of cheddar, fresh mozzarella, Gouda, and smoky provolone tossed with rigatoni noodles, topped with crispy panko for a delightful crunch.

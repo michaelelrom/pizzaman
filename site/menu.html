@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Pizza Man Milwaukee</title>
+  <meta name="description" content="Full menu for Pizza Man Milwaukee — apps, salads, MKE-style pizzas, pastas, entrees, kids menu, desserts, and lunch." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ░░ ANNOUNCEMENT BAR ░░ -->
+<div class="announce-bar">
+  <strong>Spend $70, Save $10 — code&nbsp;10OFFGGL</strong>
+  &nbsp;·&nbsp;
+  <span>Order online or call your nearest location</span>
+</div>
+
+<!-- ░░ NAVIGATION ░░ -->
+<nav class="nav scrolled" id="nav">
+  <a href="index.html" class="nav-logo" aria-label="Pizza Man Home">
+    <img
+      src="https://toast-sites-resources-prod.s3.amazonaws.com/restaurantImages/d35ef834-2a6f-4500-b35f-39dc7efbfc5f/PizzaMan_SecondaryLogo_Red3.png"
+      alt="Pizza Man Logo"
+      onerror="this.style.display='none'"
+    />
+    <div class="nav-logo-text">
+      <span class="name">Pizza Man</span>
+      <span class="est">Est. 1970</span>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="menu.html" class="active">Menu</a>
+    <a href="locations.html">Locations</a>
+    <a href="index.html#events">Events</a>
+    <a href="https://www.toasttab.com/catering/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener">Catering</a>
+    <a href="https://tables.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener">Reservations</a>
+  </div>
+
+  <div class="nav-actions">
+    <a href="https://www.pizzamanwi.com/order" target="_blank" rel="noopener" class="btn btn-primary">Order Now</a>
+  </div>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ░░ MOBILE MENU ░░ -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">×</button>
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="menu.html" onclick="closeMobile()">Menu</a>
+  <a href="locations.html" onclick="closeMobile()">Locations</a>
+  <a href="index.html#events" onclick="closeMobile()">Events</a>
+  <a href="https://tables.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener" onclick="closeMobile()">Reservations</a>
+  <a href="https://www.pizzamanwi.com/order" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem" onclick="closeMobile()">Order Now</a>
+</div>
+
+<!-- ░░ PAGE HERO ░░ -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> <span>Menu</span>
+    </div>
+    <p class="section-label">Downer Ave &amp; Wauwatosa</p>
+    <h1>Our <em style="color:var(--red)">Menu</em></h1>
+    <p style="color:var(--text-muted);margin-top:0.75rem;max-width:600px;font-size:1.05rem">
+      Fresh ingredients, handcrafted recipes, Milwaukee pride. Dine in, carry out, or order for delivery.
+    </p>
+    <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+      <a href="https://www.pizzamanwi.com/order" target="_blank" rel="noopener" class="btn btn-primary">Order Online</a>
+      <a href="https://tables.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener" class="btn btn-ghost">Make a Reservation</a>
+    </div>
+  </div>
+</div>
+
+<!-- ░░ STICKY TABS ░░ -->
+<div class="menu-page-tabs" id="menuTabs">
+  <div class="menu-page-tabs-inner">
+    <button class="menu-page-tab active" data-target="apps">Apps &amp; Salads</button>
+    <button class="menu-page-tab" data-target="pizza">Pizza</button>
+    <button class="menu-page-tab" data-target="pasta">Pasta</button>
+    <button class="menu-page-tab" data-target="entrees">Entrees</button>
+    <button class="menu-page-tab" data-target="kids">Kids</button>
+    <button class="menu-page-tab" data-target="desserts">Desserts</button>
+    <button class="menu-page-tab" data-target="lunch">Lunch</button>
+  </div>
+</div>
+
+<!-- ░░ MENU CONTENT ░░ -->
+<div class="menu-page-content">
+  <div class="menu-page-inner">
+
+    <!-- ─── APPS & SALADS ────────────────────────────────── -->
+    <section class="menu-category" id="apps">
+      <h2 class="menu-category-title">Apps &amp; <em style="color:var(--red)">Salads</em></h2>
+      <div class="menu-category-divider"></div>
+
+      <h3 style="font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem">Starters</h3>
+      <div class="menu-grid" style="margin-bottom:2.5rem">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Garlic Bread</div>
+            <div class="menu-item-desc">Side of marinara. Add mozzarella for an additional charge.</div>
+          </div>
+          <div class="menu-item-price">$7</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Regular Fries</div>
+          </div>
+          <div class="menu-item-price">$7</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Mozzarella Sticks</div>
+            <div class="menu-item-desc">3 wonton-wrapped with marinara</div>
+          </div>
+          <div class="menu-item-price">$11</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Eggplant Fries</div>
+            <div class="menu-item-desc">Buttermilk-marinated, creamy parmesan dressing, marinara</div>
+          </div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Parmesan Truffle Fries</div>
+            <div class="menu-item-desc">Truffle aioli, parmesan, sea salt</div>
+          </div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Crispy Brussels Sprouts</div>
+            <div class="menu-item-desc">Bacon, parmesan, calabrian chili honey, herbs</div>
+          </div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Bruschetta Tradizionale</div>
+            <div class="menu-item-desc">Diced roma tomato, garlic, basil, balsamic, crostini drizzled with balsamic glaze</div>
+          </div>
+          <div class="menu-item-price">$13</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Meatball Marinara</div>
+            <div class="menu-item-desc">4 house-made meatballs of ground beef and Vinny's Italian sausage, marinara</div>
+          </div>
+          <div class="menu-item-price">$16</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Oakland Escargot</div>
+          </div>
+          <div class="menu-item-price">$16</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Grilled Calamari</div>
+            <div class="menu-item-desc">Pepperoncini, marinara</div>
+          </div>
+          <div class="menu-item-price">$16</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">French Onion Soup</div>
+          </div>
+          <div class="menu-item-price">$15</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Mussels</div>
+          </div>
+          <div class="menu-item-price">$18</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Burrata Della Casa</div>
+            <div class="menu-item-desc">Fresh mozzarella filled with shreds of mozzarella infused in cream, layered with prosciutto di parma, served with crostini</div>
+          </div>
+          <div class="menu-item-price">$18</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem">Salads</h3>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">House Salad</div>
+            <div class="menu-item-desc">Seasonal greens, crouton, cucumber, pickled carrots, red onion, tomato, herb ranch dressing</div>
+          </div>
+          <div class="menu-item-price">$11</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Caesar Salad</div>
+            <div class="menu-item-desc">Romaine, Parmesan, garlic bread crouton, original Pizza Man Caesar dressing</div>
+          </div>
+          <div class="menu-item-price">$13</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Apple Salad</div>
+          </div>
+          <div class="menu-item-price">$13</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Shaved Brussels Sprouts Salad</div>
+            <div class="menu-item-desc">Arugula, Door County dried cherries, ricotta salata, toasted hazelnuts, charred lemon vinaigrette</div>
+          </div>
+          <div class="menu-item-price">$13</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PIZZA ─────────────────────────────────────────── -->
+    <section class="menu-category" id="pizza">
+      <h2 class="menu-category-title">12" MKE-Style <em style="color:var(--red)">Pizzas</em></h2>
+      <div class="menu-category-divider"></div>
+
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.75rem;margin-bottom:2.5rem;display:flex;gap:2rem;flex-wrap:wrap;align-items:center">
+        <div>
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:0.35rem">Build Your Own — 12"</div>
+          <div style="font-size:0.875rem;color:var(--text-muted)">Start with a base crust, then add your toppings.</div>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <div style="text-align:center"><div style="font-weight:700;font-size:0.9rem">Thin Crust</div><div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700">$13</div></div>
+          <div style="text-align:center"><div style="font-weight:700;font-size:0.9rem">Pan Crust</div><div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700">$16</div></div>
+          <div style="text-align:center"><div style="font-weight:700;font-size:0.9rem">Deep Dish</div><div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700">$18</div></div>
+          <div style="text-align:center"><div style="font-weight:700;font-size:0.9rem">Gluten Free</div><div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700">$16</div></div>
+        </div>
+      </div>
+
+      <h3 style="font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem">Specialty Pizzas</h3>
+      <div class="pizzas-grid">
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Pizza Man Special</span><span class="pizza-card-price">$23</span></div>
+          <p class="pizza-card-desc">Classic sauce, pepperoni, Vinny's Italian sausage, green pepper, yellow onion, mushroom, black olive</p>
+          <span class="pizza-card-tag">Fan Favorite</span>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Milwaukee</span><span class="pizza-card-price">$19</span></div>
+          <p class="pizza-card-desc">Classic sauce, Vinny's Italian sausage, mushroom, yellow onion</p>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Margherita</span><span class="pizza-card-price">$19</span></div>
+          <p class="pizza-card-desc">Classic sauce, Roma tomatoes, fresh mozzarella, fresh basil, EVOO</p>
+          <span class="pizza-card-tag">Classic</span>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Hawaiian</span><span class="pizza-card-price">$19</span></div>
+          <p class="pizza-card-desc">Classic sauce, Canadian bacon, grilled pineapple, cream cheese</p>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Bianca</span><span class="pizza-card-price">$20</span></div>
+          <p class="pizza-card-desc">Garlic cream sauce, cream cheese, mushroom, truffle oil, Parmesan, arugula</p>
+          <span class="pizza-card-tag">Vegetarian</span>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Veggie Supreme</span><span class="pizza-card-price">$20</span></div>
+          <p class="pizza-card-desc">Classic sauce, black olive, tomato, green pepper, mushroom, yellow onion</p>
+          <span class="pizza-card-tag">Vegetarian</span>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Shifty Pizza</span><span class="pizza-card-price">$20</span></div>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Carnivoro</span><span class="pizza-card-price">$21</span></div>
+          <p class="pizza-card-desc">Classic sauce, pepperoni, Vinny's Italian sausage, salami, Canadian bacon</p>
+          <span class="pizza-card-tag">Meat Lover</span>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">King Roni</span><span class="pizza-card-price">$21</span></div>
+          <p class="pizza-card-desc">Classic sauce, pepperoni cups, diced pepperoni, pepperoni, Parmesan, chili flake, oregano</p>
+          <span class="pizza-card-tag">Pepperoni Lover</span>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Topher</span><span class="pizza-card-price">$21</span></div>
+          <p class="pizza-card-desc">Classic sauce, Vinny's Italian sausage, calabrian chili honey, cream cheese, pickled jalapeño</p>
+          <span class="pizza-card-tag">Spicy</span>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Artichoke a La Mode</span><span class="pizza-card-price">$21</span></div>
+          <p class="pizza-card-desc">Classic sauce, artichoke, tomato, chopped garlic, basil, cream cheese</p>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Atomica</span><span class="pizza-card-price">$23</span></div>
+          <p class="pizza-card-desc">Classic sauce, spicy soppressata, prosciutto, calabrian pepper, oregano, red onion, smoked provolone</p>
+          <span class="pizza-card-tag">Spicy</span>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">BBQ Chicken</span><span class="pizza-card-price">$23</span></div>
+          <p class="pizza-card-desc">BBQ sauce, cheddar, chicken, cream cheese, red onion, pickled banana pepper, chives</p>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Pesto Pig</span><span class="pizza-card-price">$23</span></div>
+          <p class="pizza-card-desc">Basil pesto, pancetta, tomato, red wine pickled onion, goat cheese, fresh basil</p>
+          <span class="pizza-card-tag">Chef's Pick</span>
+        </div>
+        <div class="pizza-card">
+          <div class="pizza-card-header"><span class="pizza-card-name">Di Mare</span><span class="pizza-card-price">$28</span></div>
+          <p class="pizza-card-desc">Choice of sauce, calamari, shrimp, crab meat, green peppers, red onions, diced tomatoes, cilantro</p>
+          <span class="pizza-card-tag">Seafood</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PASTA ──────────────────────────────────────────── -->
+    <section class="menu-category" id="pasta">
+      <h2 class="menu-category-title">Artisan <em style="color:var(--red)">Pastas</em></h2>
+      <div class="menu-category-divider"></div>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Spaghetti + Meatballs</div>
+            <div class="menu-item-desc">Italian red sauce, parmesan, herbs</div>
+          </div>
+          <div class="menu-item-price">$22</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Carbonara</div>
+          </div>
+          <div class="menu-item-price">$23</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Chicken Fettuccine Alfredo</div>
+            <div class="menu-item-desc">Garlic cream sauce, parmesan</div>
+          </div>
+          <div class="menu-item-price">$23</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Spicy Rigatoni a La Vodka</div>
+            <div class="menu-item-desc">Vodka sauce, Vinny's Italian sausage, Calabrian peppers, parmesan</div>
+          </div>
+          <div class="menu-item-price">$23</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Pesto Ravioli</div>
+          </div>
+          <div class="menu-item-price">$24</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Shrimp Scampi</div>
+            <div class="menu-item-desc">Linguine, 7 jumbo shrimp tail-on, EVOO, fresh garlic, herbs, white wine butter sauce</div>
+          </div>
+          <div class="menu-item-price">$26</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ENTREES ────────────────────────────────────────── -->
+    <section class="menu-category" id="entrees">
+      <h2 class="menu-category-title">Hearty <em style="color:var(--red)">Entrees</em></h2>
+      <div class="menu-category-divider"></div>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Gnocchi A La Diavla</div>
+          </div>
+          <div class="menu-item-price">$25</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Chicken Parmesan</div>
+            <div class="menu-item-desc">Italian red sauce, spaghetti, fresh mozzarella, parmesan</div>
+          </div>
+          <div class="menu-item-price">$26</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Grilled Salmon</div>
+          </div>
+          <div class="menu-item-price">$27</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Chicken Marsala</div>
+            <div class="menu-item-desc">Two lightly breaded chicken breasts, mushroom and onion creamy Marsala sauce, sautéed Brussels sprouts</div>
+          </div>
+          <div class="menu-item-price">$27</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Blackened Combo</div>
+          </div>
+          <div class="menu-item-price">$30</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Scallops Risotto</div>
+          </div>
+          <div class="menu-item-price">$33</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Scallops Gnocchi</div>
+          </div>
+          <div class="menu-item-price">$33</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Short Rib &amp; Risotto</div>
+            <div class="menu-item-desc">Tender short ribs slowly braised in red wine and beer, served over saffron risotto Milanese</div>
+          </div>
+          <div class="menu-item-price">$37</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Filet Mignon</div>
+          </div>
+          <div class="menu-item-price">$45</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── KIDS ───────────────────────────────────────────── -->
+    <section class="menu-category" id="kids">
+      <h2 class="menu-category-title">Kids <em style="color:var(--red)">Menu</em></h2>
+      <div class="menu-category-divider"></div>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Kids Buttered Noodles</div></div>
+          <div class="menu-item-price">$7</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Kids Spaghetti with Red Sauce</div></div>
+          <div class="menu-item-price">$7</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Kids Fettuccine Alfredo</div></div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Kids Cheese Pizza</div></div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Kids Chicken Tenders</div></div>
+          <div class="menu-item-price">$10</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── DESSERTS ──────────────────────────────────────── -->
+    <section class="menu-category" id="desserts">
+      <h2 class="menu-category-title">Sweet <em style="color:var(--red)">Endings</em></h2>
+      <div class="menu-category-divider"></div>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Italian Sorbet</div></div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Cannoli</div>
+            <div class="menu-item-desc">Sweet ricotta and chocolate chips</div>
+          </div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Tiramisu</div>
+            <div class="menu-item-desc">Espresso-soaked ladyfingers, mascarpone cheese, shaved chocolate</div>
+          </div>
+          <div class="menu-item-price">$10</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Crème Brûlée</div></div>
+          <div class="menu-item-price">$10</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Crème Caramel</div></div>
+          <div class="menu-item-price">$10</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Panna Cotta</div></div>
+          <div class="menu-item-price">$10</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Chocolate Orange Mousse</div></div>
+          <div class="menu-item-price">$10</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><div class="menu-item-name">Cheesecake</div></div>
+          <div class="menu-item-price">$10</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── LUNCH ──────────────────────────────────────────── -->
+    <section class="menu-category" id="lunch">
+      <h2 class="menu-category-title">Lunch <em style="color:var(--red)">Menu</em></h2>
+      <div class="menu-category-divider"></div>
+
+      <h3 style="font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem">Antipasto</h3>
+      <div class="menu-grid" style="margin-bottom:2.5rem">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Pane D'Aglio</div>
+            <div class="menu-item-desc">Garlic bread with marinara. Add mozzarella $2</div>
+          </div>
+          <div class="menu-item-price">$7</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Viola Bites</div>
+            <div class="menu-item-desc">Buttermilk eggplant fries with creamy parmesan dressing & marinara</div>
+          </div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Mozzaviva</div>
+            <div class="menu-item-desc">3 homemade wonton-wrapped mozzarella sticks with marinara</div>
+          </div>
+          <div class="menu-item-price">$11</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Crispy Cavolo</div>
+            <div class="menu-item-desc">Brussels sprouts, bacon, parmesan, herbs, Calabrian chili honey glaze</div>
+          </div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Bruschetta Tradizionale</div>
+            <div class="menu-item-desc">Diced Roma tomatoes, garlic, basil on crostini with balsamic glaze</div>
+          </div>
+          <div class="menu-item-price">$13</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Parmigiano Truffle Fries</div>
+            <div class="menu-item-desc">Truffle aioli, parmesan, sea salt</div>
+          </div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Pomodoro Pop</div>
+            <div class="menu-item-desc">4 large pork and veal meatballs with crostini</div>
+          </div>
+          <div class="menu-item-price">$16</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Zuppa Di Cipolle Francese</div>
+            <div class="menu-item-desc">Rich beef broth, white/red/Vidalia onions & leeks, topped with golden crostini & melted Swiss</div>
+          </div>
+          <div class="menu-item-price">$15</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem">Insalata</h3>
+      <div class="menu-grid" style="margin-bottom:2.5rem">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Insalata Di Casa</div>
+            <div class="menu-item-desc">Seasonal greens, cucumber, red onion, tomato, balsamic vinaigrette</div>
+          </div>
+          <div class="menu-item-price">$11</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Insalata Caesar</div>
+            <div class="menu-item-desc">Romaine, Parmesan, homemade garlic croutons, Pizza Man Caesar dressing. Add white anchovies +$3</div>
+          </div>
+          <div class="menu-item-price">$13</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Shaved Brussels Sprouts</div>
+            <div class="menu-item-desc">Arugula, Door County dried cherries, ricotta salata, toasted hazelnuts, charred lemon vinaigrette</div>
+          </div>
+          <div class="menu-item-price">$13</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Insalata Di Mele</div>
+            <div class="menu-item-desc">Arugula, baby spinach, goat cheese, candied walnuts, dried cherries, fresh apples, champagne vinaigrette</div>
+          </div>
+          <div class="menu-item-price">$13</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem">Panini</h3>
+      <div class="menu-grid" style="margin-bottom:2.5rem">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Formaggi Divini</div>
+            <div class="menu-item-desc">Fresh mozzarella, sharp cheddar, creamy Gouda, smoky mozzarella — grilled on ciabatta</div>
+          </div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Caprese D'Oro</div>
+            <div class="menu-item-desc">Roma tomatoes, fresh mozzarella, basil, EVOO pressed in ciabatta</div>
+          </div>
+          <div class="menu-item-price">$13</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Pollo Verde</div>
+            <div class="menu-item-desc">Grilled chicken, smoky mozzarella, pesto, Roma tomatoes on ciabatta</div>
+          </div>
+          <div class="menu-item-price">$14</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Turkey Arrosto Twist</div>
+            <div class="menu-item-desc">Sliced turkey, sharp cheddar, crisp apple slices, lemon aioli on ciabatta</div>
+          </div>
+          <div class="menu-item-price">$14</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Tonno Supremo</div>
+            <div class="menu-item-desc">House-made tuna salad, fresh tomatoes, lemon aioli, melted cheddar on ciabatta</div>
+          </div>
+          <div class="menu-item-price">$15</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Classico Smash Burger</div>
+            <div class="menu-item-desc">6 oz smashed beef patty, lettuce, tomato, onion, melted cheddar on brioche bun</div>
+          </div>
+          <div class="menu-item-price">$15</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem">Pasta</h3>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Spaghetti Di Nona &amp; Polpetto</div>
+            <div class="menu-item-desc">Al dente spaghetti in homemade marinara sauce, three tender pork &amp; veal meatballs</div>
+          </div>
+          <div class="menu-item-price">$14</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Quattro Formaggi Maccheroni</div>
+            <div class="menu-item-desc">Cheddar, mozzarella, Gouda, smoked provolone with rigatoni, topped with crispy panko</div>
+          </div>
+          <div class="menu-item-price">$15</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Fettuccine Crema Bella</div>
+            <div class="menu-item-desc">Grilled chicken, fettuccine, velvety garlic cream sauce</div>
+          </div>
+          <div class="menu-item-price">$16</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Pollo Mediterraneo</div>
+            <div class="menu-item-desc">Diced chicken breast, linguine, fresh herbs, EVOO, hint of chili flakes</div>
+          </div>
+          <div class="menu-item-price">$16</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order CTA -->
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;margin-top:2rem">
+      <p class="section-label" style="text-align:center">Ready to Order?</p>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.75rem;margin-bottom:0.75rem">
+        Order Online or Call Us
+      </h3>
+      <p style="color:var(--text-muted);margin-bottom:1.5rem">
+        Downer Ave: <strong style="color:var(--text)">(414) 488-9999</strong>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        Wauwatosa: <strong style="color:var(--text)">(414) 249-2000</strong>
+      </p>
+      <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://www.pizzamanwi.com/order" target="_blank" rel="noopener" class="btn btn-primary">Order Online Now</a>
+        <a href="https://tables.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener" class="btn btn-ghost">Make a Reservation</a>
+      </div>
+    </div>
+
+  </div>
+</div><!-- end menu-page-content -->
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">Pizza Man</div>
+        <p class="tagline">Serving Milwaukee since 1970.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/pizzamanwi/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/pizzamandowner" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <div class="footer-location">
+          <strong>Downer Ave</strong>
+          2597 N Downer Ave, Milwaukee, WI<br/>
+          (414) 488-9999
+        </div>
+        <div class="footer-location">
+          <strong>Wauwatosa</strong>
+          11500 W Burleigh St, Wauwatosa, WI<br/>
+          (414) 249-2000
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Order &amp; More</h4>
+        <ul>
+          <li><a href="https://www.pizzamanwi.com/order" target="_blank" rel="noopener">Order Online</a></li>
+          <li><a href="https://tables.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener">Reservations</a></li>
+          <li><a href="https://www.toasttab.com/catering/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener">Catering</a></li>
+          <li><a href="https://www.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue/giftcards" target="_blank" rel="noopener">Gift Cards</a></li>
+          <li><a href="https://www.pizzamanwi.com/loyalty" target="_blank" rel="noopener">Rewards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="https://www.pizzamanwi.com/event-inquiry" target="_blank" rel="noopener">Events</a></li>
+          <li><a href="https://www.pizzamanwi.com/careers" target="_blank" rel="noopener">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Pizza Man. All rights reserved.</span>
+      <span>
+        <a href="https://www.facebook.com/pizzamanwi/" target="_blank" rel="noopener">Facebook</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.instagram.com/pizzamandowner" target="_blank" rel="noopener">Instagram</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+  hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); document.body.style.overflow='hidden'; });
+  function closeMobile() { mobileMenu.classList.remove('open'); document.body.style.overflow=''; }
+  mobileClose.addEventListener('click', closeMobile);
+
+  // Sticky tab nav active state on scroll
+  const tabs = document.querySelectorAll('.menu-page-tab');
+  const sections = document.querySelectorAll('.menu-category');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = document.getElementById(tab.dataset.target);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+
+  // Update active tab on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tabs.forEach(t => {
+          t.classList.toggle('active', t.dataset.target === id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

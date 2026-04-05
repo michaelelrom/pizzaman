@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Locations & Hours — Pizza Man Milwaukee</title>
+  <meta name="description" content="Find Pizza Man at two Milwaukee-area locations: Downer Ave and Wauwatosa. Hours, phone numbers, maps, and ordering info." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .map-embed {
+      width: 100%;
+      height: 320px;
+      border: none;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      display: block;
+      filter: grayscale(0.3) contrast(1.1);
+    }
+
+    .location-full-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+
+    .location-full-card:hover { border-color: rgba(216,10,10,0.3); }
+
+    .location-full-header {
+      background: var(--red);
+      padding: 2rem 2.5rem;
+    }
+
+    .location-full-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .location-full-header .address-line {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+    }
+
+    .location-full-body {
+      padding: 2rem 2.5rem;
+    }
+
+    .location-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-block h4 {
+      font-family: 'Cabin', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+
+    .phone-link {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color var(--transition);
+    }
+
+    .phone-link:hover { color: var(--red); }
+
+    .payments-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .payment-tag {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.3rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .notice-box {
+      background: rgba(216,10,10,0.08);
+      border: 1px solid rgba(216,10,10,0.2);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    .notice-box strong { color: var(--text); }
+
+    @media (max-width: 640px) {
+      .location-info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .location-full-header { padding: 1.5rem; }
+      .location-full-body { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ░░ ANNOUNCEMENT BAR ░░ -->
+<div class="announce-bar">
+  <strong>Spend $70, Save $10 — code&nbsp;10OFFGGL</strong>
+  &nbsp;·&nbsp;
+  <span>Text JOIN to 1-888-392-2418 for exclusive SMS offers</span>
+</div>
+
+<!-- ░░ NAVIGATION ░░ -->
+<nav class="nav scrolled" id="nav">
+  <a href="index.html" class="nav-logo" aria-label="Pizza Man Home">
+    <img
+      src="https://toast-sites-resources-prod.s3.amazonaws.com/restaurantImages/d35ef834-2a6f-4500-b35f-39dc7efbfc5f/PizzaMan_SecondaryLogo_Red3.png"
+      alt="Pizza Man Logo"
+      onerror="this.style.display='none'"
+    />
+    <div class="nav-logo-text">
+      <span class="name">Pizza Man</span>
+      <span class="est">Est. 1970</span>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="locations.html" class="active">Locations</a>
+    <a href="index.html#events">Events</a>
+    <a href="https://www.toasttab.com/catering/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener">Catering</a>
+    <a href="https://tables.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener">Reservations</a>
+  </div>
+
+  <div class="nav-actions">
+    <a href="https://www.pizzamanwi.com/order" target="_blank" rel="noopener" class="btn btn-primary">Order Now</a>
+  </div>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ░░ MOBILE MENU ░░ -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">×</button>
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="menu.html" onclick="closeMobile()">Menu</a>
+  <a href="locations.html" onclick="closeMobile()">Locations</a>
+  <a href="index.html#events" onclick="closeMobile()">Events</a>
+  <a href="https://tables.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener" onclick="closeMobile()">Reservations</a>
+  <a href="https://www.pizzamanwi.com/order" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem" onclick="closeMobile()">Order Now</a>
+</div>
+
+<!-- ░░ PAGE HERO ░░ -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> <span>Locations</span>
+    </div>
+    <p class="section-label">Milwaukee &amp; Wauwatosa</p>
+    <h1>Find <em style="color:var(--red)">Pizza Man</em></h1>
+    <p style="color:var(--text-muted);margin-top:0.75rem;font-size:1.05rem;max-width:560px">
+      Two neighborhood locations in the Milwaukee area. Dine in, carry out, or order online.
+    </p>
+  </div>
+</div>
+
+<!-- ░░ LOCATIONS ░░ -->
+<section class="section">
+  <div class="section-inner">
+    <div style="display:flex;flex-direction:column;gap:3rem">
+
+      <!-- ─── DOWNER AVE ─────────────────────────────────── -->
+      <div class="location-full-card reveal" id="downer">
+        <div class="location-full-header">
+          <h2>Pizza Man — Downer Ave</h2>
+          <div class="address-line">2597 North Downer Avenue, Milwaukee, WI 53211</div>
+        </div>
+        <div class="location-full-body">
+          <div class="location-info-grid">
+            <!-- Phone & Actions -->
+            <div class="info-block">
+              <h4>Contact &amp; Order</h4>
+              <a href="tel:4144889999" class="phone-link">(414) 488-9999</a>
+              <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem">
+                <a href="https://www.pizzamanwi.com/order" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center">Order Online</a>
+                <a href="https://tables.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center">Make a Reservation</a>
+                <a href="https://maps.google.com/?q=2597+North+Downer+Avenue+Milwaukee+WI+53211" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center">Get Directions</a>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="info-block">
+              <h4>Hours</h4>
+              <table class="hours-table" style="width:100%">
+                <tbody>
+                  <tr data-day="Monday">   <td>Monday</td>    <td class="closed">Closed</td></tr>
+                  <tr data-day="Tuesday">  <td>Tuesday</td>   <td>4:00 PM – 9:00 PM</td></tr>
+                  <tr data-day="Wednesday"><td>Wednesday</td> <td>4:00 PM – 9:00 PM</td></tr>
+                  <tr data-day="Thursday"> <td>Thursday</td>  <td>4:00 PM – 9:00 PM</td></tr>
+                  <tr data-day="Friday">   <td>Friday</td>    <td>3:00 PM – 10:00 PM</td></tr>
+                  <tr data-day="Saturday"> <td>Saturday</td>  <td>11:00 AM – 10:00 PM</td></tr>
+                  <tr data-day="Sunday">   <td>Sunday</td>    <td>11:00 AM – 8:00 PM</td></tr>
+                </tbody>
+              </table>
+              <div class="notice-box">
+                <strong>Online ordering</strong> available during restaurant hours. Typical pickup time ~28 minutes.
+              </div>
+            </div>
+          </div>
+
+          <!-- Payments & Features -->
+          <div style="margin-bottom:1.5rem">
+            <h4 style="font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:0.75rem">Accepted Payments</h4>
+            <div class="payments-list">
+              <span class="payment-tag">Cash</span>
+              <span class="payment-tag">Credit Card</span>
+              <span class="payment-tag">Debit Card</span>
+              <span class="payment-tag">Apple Pay</span>
+              <span class="payment-tag">Google Pay</span>
+              <span class="payment-tag">Tap to Pay</span>
+              <span class="payment-tag">Gift Card</span>
+              <span class="payment-tag">Amex</span>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-bottom:2rem">
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem">
+              <span>🍕</span><span>Dine-In</span>
+            </div>
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem">
+              <span>🛍️</span><span>Carry Out</span>
+            </div>
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem">
+              <span>🚗</span><span>Delivery</span>
+            </div>
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem">
+              <span>🎉</span><span>Private Events</span>
+            </div>
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem">
+              <span>🚚</span><span>Catering</span>
+            </div>
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem">
+              <span>🎁</span><span>Gift Cards</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <iframe
+          class="map-embed"
+          src="https://maps.google.com/maps?q=2597+North+Downer+Avenue+Milwaukee+WI+53211&output=embed"
+          title="Pizza Man Downer Ave Map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <!-- ─── WAUWATOSA ──────────────────────────────────── -->
+      <div class="location-full-card reveal reveal-delay-1" id="wauwatosa">
+        <div class="location-full-header">
+          <h2>Pizza Man — Wauwatosa</h2>
+          <div class="address-line">11500 West Burleigh Street, Wauwatosa, WI 53222</div>
+        </div>
+        <div class="location-full-body">
+          <div class="location-info-grid">
+            <!-- Phone & Actions -->
+            <div class="info-block">
+              <h4>Contact &amp; Order</h4>
+              <a href="tel:4142492000" class="phone-link">(414) 249-2000</a>
+              <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem">
+                <a href="https://www.pizzamanwi.com/order" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center">Order Online</a>
+                <a href="https://maps.google.com/?q=11500+West+Burleigh+Street+Wauwatosa+WI+53222" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center">Get Directions</a>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="info-block">
+              <h4>Hours</h4>
+              <table class="hours-table" style="width:100%">
+                <tbody>
+                  <tr data-day="Sunday">   <td>Sunday</td>    <td>11:30 AM – 8:00 PM</td></tr>
+                  <tr data-day="Monday">   <td>Monday</td>    <td>11:00 AM – 8:00 PM</td></tr>
+                  <tr data-day="Tuesday">  <td>Tuesday</td>   <td>4:00 PM – 8:00 PM</td></tr>
+                  <tr data-day="Wednesday"><td>Wednesday</td> <td>11:00 AM – 8:00 PM</td></tr>
+                  <tr data-day="Thursday"> <td>Thursday</td>  <td>11:00 AM – 9:00 PM</td></tr>
+                  <tr data-day="Friday">   <td>Friday</td>    <td>11:00 AM – 9:00 PM</td></tr>
+                  <tr data-day="Saturday"> <td>Saturday</td>  <td>11:30 AM – 9:00 PM</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Payments -->
+          <div style="margin-bottom:1.5rem">
+            <h4 style="font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:0.75rem">Accepted Payments</h4>
+            <div class="payments-list">
+              <span class="payment-tag">Cash</span>
+              <span class="payment-tag">Credit Card</span>
+              <span class="payment-tag">Debit Card</span>
+              <span class="payment-tag">Apple Pay</span>
+              <span class="payment-tag">Google Pay</span>
+              <span class="payment-tag">Tap to Pay</span>
+              <span class="payment-tag">Gift Card</span>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-bottom:2rem">
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem">
+              <span>🍕</span><span>Dine-In</span>
+            </div>
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem">
+              <span>🛍️</span><span>Carry Out</span>
+            </div>
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem">
+              <span>🚗</span><span>Delivery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <iframe
+          class="map-embed"
+          src="https://maps.google.com/maps?q=11500+West+Burleigh+Street+Wauwatosa+WI+53222&output=embed"
+          title="Pizza Man Wauwatosa Map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░ LOYALTY / CTA ░░ -->
+<div class="loyalty-banner">
+  <div class="loyalty-banner-inner">
+    <span class="reveal" style="font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--red-light)">Pizza Man Rewards</span>
+    <span class="reward reveal" style="margin-bottom:0.5rem">$10 Free</span>
+    <h2 class="reveal reveal-delay-1">When You Sign Up</h2>
+    <p class="reveal reveal-delay-2">
+      Join our loyalty program, earn cashback on every order, and unlock exclusive offers at both locations.
+    </p>
+    <div class="reveal reveal-delay-3">
+      <a href="https://www.pizzamanwi.com/loyalty" target="_blank" rel="noopener" class="btn btn-primary">Join Rewards</a>
+    </div>
+  </div>
+</div>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">Pizza Man</div>
+        <p class="tagline">Serving Milwaukee since 1970.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/pizzamanwi/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/pizzamandowner" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <div class="footer-location">
+          <strong><a href="#downer" style="color:var(--text)">Downer Ave</a></strong>
+          2597 N Downer Ave, Milwaukee, WI<br/>
+          (414) 488-9999
+        </div>
+        <div class="footer-location">
+          <strong><a href="#wauwatosa" style="color:var(--text)">Wauwatosa</a></strong>
+          11500 W Burleigh St, Wauwatosa, WI<br/>
+          (414) 249-2000
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Order</h4>
+        <ul>
+          <li><a href="https://www.pizzamanwi.com/order" target="_blank" rel="noopener">Order Online</a></li>
+          <li><a href="https://tables.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener">Reservations</a></li>
+          <li><a href="https://www.toasttab.com/catering/pizza-man-downer-ave-2597-north-downer-avenue" target="_blank" rel="noopener">Catering</a></li>
+          <li><a href="https://www.toasttab.com/pizza-man-downer-ave-2597-north-downer-avenue/giftcards" target="_blank" rel="noopener">Gift Cards</a></li>
+          <li><a href="https://www.pizzamanwi.com/loyalty" target="_blank" rel="noopener">Rewards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="https://www.pizzamanwi.com/event-inquiry" target="_blank" rel="noopener">Events</a></li>
+          <li><a href="https://www.pizzamanwi.com/careers" target="_blank" rel="noopener">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Pizza Man. All rights reserved.</span>
+      <span>
+        <a href="https://www.facebook.com/pizzamanwi/" target="_blank" rel="noopener">Facebook</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.instagram.com/pizzamandowner" target="_blank" rel="noopener">Instagram</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+  hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); document.body.style.overflow='hidden'; });
+  function closeMobile() { mobileMenu.classList.remove('open'); document.body.style.overflow=''; }
+  mobileClose.addEventListener('click', closeMobile);
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Highlight today's hours
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const today = days[new Date().getDay()];
+  document.querySelectorAll('.hours-table tr').forEach(row => {
+    if (row.dataset.day === today) row.classList.add('today');
+  });
+</script>
+</body>
+</html>

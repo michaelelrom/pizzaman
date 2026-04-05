@@ -1,0 +1,210 @@
+<!doctype html><html prefix="og: http://ogp.me/ns#" lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes"/><meta name="author" content="Toast, Inc."><script>(function () {
+    // Helps with debugging by loading all the details of the cookie banner,
+    // even if they won't be displayed for a given users geolocation.
+    window.fides_overrides = {
+      fides_consent_non_applicable_flag_mode: "include",
+      fides_consent_flag_type: "boolean"
+    };
+    // Adds extra debugging information when Ethyca is managing consent for GTM.
+    addEventListener("FidesInitializing", function () {
+      window.Fides.gtm({
+        "non_applicable_flag_mode": "include",
+        "flag_type": "boolean",
+      });
+    });
+    // Goes through the url query params of the website/oo page looking for ones starting with fides_
+    var fidesPrefix = "fides_";
+    var searchParams = new URLSearchParams(location.search);
+    var fidesSearchParams = new URLSearchParams();
+    var disabledSystemsParamName = "fides_disabled_systems";
+    var disabledSystemsParam = "&fides_disabled_systems=pendo,heap,tealium,toast_guest_analytics,google_tag_manager,third_party_embedded_widgets,google_analytics,meta,userway";
+    for (var entry of searchParams.entries()) {
+      var key = entry[0];
+      var value = entry[1];
+      if (key === disabledSystemsParamName) {
+        // fides_disabled_systems is a special case because unlike the others,
+        // we need to set this even for non-debugging scenarios. So here, if we find
+        // fides_disabled_systems in the URL, it acts as an override. But if we don't,
+        // we set it the value passed in to generateEthycaScript.
+        disabledSystemsParam = "&" + disabledSystemsParamName + "=" + value;
+        continue;
+      }
+      if (key.startsWith(fidesPrefix)) {
+        // There is special handling for fides_cache_bust - its value is set to the
+        // current timestamp. This is because the cache_bust requires a unique value
+        // to avoid hitting Ethyca's cache.
+        fidesSearchParams.set(
+          key.replace(fidesPrefix, ""),
+          key === fidesPrefix + "cache_bust" ? Date.now().toString() : value
+        );
+      }
+    }
+    var src = "https://toast.fides-cdn.ethyca.com/fides.js?" + fidesSearchParams.toString() + "&property_id=" + "FDS-HTPGY8" + disabledSystemsParam;
+    var script = document.createElement("script");
+    script.setAttribute("src", src);
+    script.setAttribute("id", "fides-js");
+    document.head.appendChild(script);
+  })();</script> <meta data-rh="true" name="robots" content="noindex"/><meta data-rh="true" name="og:url" content="https://order.toasttab.com/online/pizza-man-wauwatosa-11500-west-burleigh-street"/><meta data-rh="true" name="og:image" content="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-193166000000000000/banner_1705953006.jpg?size=medium"/><meta data-rh="true" name="description" content="Order online from Pizza Man - Wauwatosa, including . Get the best prices and service by ordering direct!"/><meta data-rh="true" name="og:description" content="Order online from Pizza Man - Wauwatosa, including . Get the best prices and service by ordering direct!"/><meta data-rh="true" name="og:title" content="Order Online"/>  <title data-rh="true">Order Online</title> <link data-rh="true" rel="canonical" href="https://order.toasttab.com/online/pizza-man-wauwatosa-11500-west-burleigh-street"/><link data-rh="true" rel="icon" id="favicon" href="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-193166000000000000/restaurant_1708379196.png?size=small"/> <style data-rh="true" type="text/css">
+  
+  
+  
+  
+  
+  
+
+  :root {
+    /* DS Theme Scheme -- Prevent CSS conflicts in Toast Admin by prefixing variables with 'DS-' (Digital Storefront) */
+    
+  
+    /* DEPRECATED -- Legacy theme variables -- USED ONLY FOR BACKWARDS COMPATIBILITY */
+    --tsw-background-color: #FFFFFF;
+    --tsw-background-color-med: #FFFFFF40;
+    --tsw-background-contrasting-color: #2B4FB9; /* Guaranteed to contrast with --tsw-background-color */
+    --tsw-background-contrasting-color-50: #2B4FB966;
+
+    --tsw-primary-color: #2B4FB9;
+    --tsw-primary-color-90: #2B4FB9cc;
+    --tsw-primary-color-75: #2B4FB9aa;
+    --tsw-primary-color-50: #2B4FB966;
+    --tsw-primary-color-25: #2B4FB922;
+    --tsw-primary-contrasting-color: #FFFFFF; /* Guaranteed to contrast with --tsw-primary-color */
+    --tsw-primary-contrasting-color-50: #FFFFFF66;
+    --tsw-primary-hover-color: #173ba5;
+    --tsw-primary-hover-color-25: #2B4FB925;
+
+    --tsw-primary-text-color: #252525;
+    --tsw-primary-text-color-90: #252525cc;
+    --tsw-primary-text-color-75: #252525aa;
+    --tsw-primary-text-color-50: #25252566;
+    --tsw-primary-text-color-25: #25252522;
+    --tsw-primary-text-contrasting-color: #FFFFFF; /* Guaranteed to contrast with --tsw-primary-text-color */
+    --tsw-primary-text-contrasting-color-50: #FFFFFF66;
+
+    --tsw-white-contrasting-color: #2B4FB9; /* A user color that contrasts with white */
+    --tsw-white-contrasting-color-75: #2B4FB9aa;
+    --tsw-white-contrasting-color-50: #2B4FB966;
+
+    --tsw-secondary-text-color: #FFFFFF;
+    --tsw-link-color: #2B4FB9;
+    --tsw-font-family: "Effra";
+    --tsw-header-font-family: "Effra";
+    --ds-header-1-font-family: "Effra";
+    --ds-header-2-font-family: "Effra";
+    --ds-header-3-font-family: "Effra";
+    --ds-header-4-font-family: "Effra";
+    
+    
+    
+    
+    }
+  </style> <script data-rh="true" type="text/javascript">
+  var _user_id = '';
+  var _session_id = 'undefined'; // Set to a unique session ID for the visitor's current browsing session.
+
+  var _sift = window._sift = window._sift || [];
+  _sift.push(['_setAccount', '3ae2d35896']);
+  _sift.push(['_setUserId', _user_id]);
+  _sift.push(['_setSessionId', _session_id]);
+  _sift.push(['_trackPageview']);
+
+ (function() {
+   function ls() {
+     var e = document.createElement('script');
+     e.src = 'https://cdn.sift.com/s.js';
+     document.body.appendChild(e);
+   }
+   if (window.attachEvent) {
+     window.attachEvent('onload', ls);
+   } else {
+     window.addEventListener('load', ls, false);
+   }
+ })();
+</script><script data-rh="true" type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      wait_for_update: 500,
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+  </script><script data-rh="true" async="true" src="https://www.googletagmanager.com/gtag/js?id=AW-17550819009" type="text/javascript"></script><script data-rh="true" type="text/javascript">
+    gtag('js', new Date());
+    gtag('config', 'AW-17550819009');
+  </script><meta name="msapplication-TileColor" content="#b91d47"><meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="https://d28f3w0x9i80nq.cloudfront.net/app/ui_1775146375.min.css"/><link rel="stylesheet" href="https://d28f3w0x9i80nq.cloudfront.net/app/vendor_1775146375.min.css"/><link rel="stylesheet" href="https://d28f3w0x9i80nq.cloudfront.net/app/public_1775146375.min.css"/><link rel="preconnect" href="https://fonts.gstatic.com"/><script src="https://www.google.com/recaptcha/enterprise.js?render=6LfD-H8mAAAAAK-gw-dLyIgoh1TpBg2VuSZi5SJA" async></script><script>window.__APOLLO_STATE__ = {"ROOT_QUERY":{"__typename":"Query","restaurantByShortUrl({\"shortUrl\":\"pizza-man-wauwatosa-11500-west-burleigh-street\"})":null}};
+    window.__OO_STATE__ = {"ROOT_QUERY":{"__typename":"Query","restaurantV2ByShortUrl({\"shortUrl\":\"pizza-man-wauwatosa-11500-west-burleigh-street\"})":{"__typename":"Restaurant","guid":"a1921791-c499-4634-b2e5-85fafacc945c","name":"Pizza Man - Wauwatosa","whiteLabelName":"Pizza Man - Wauwatosa","location":{"__typename":"Location","address1":"11500 West Burleigh Street","address2":null,"city":"Wauwatosa","state":"WI","zip":"53222","phone":"4142492000","latitude":43.077969,"longitude":-88.056469,"administrativeArea":"WI","country":"US"},"minimumTakeoutTime":60,"minimumDeliveryTime":0,"timeZoneId":"America\u002FChicago","cuisineType":"Pizza","hasOnlineOrderingModule":false,"hasToastLocalModule":false,"description":"Come in and enjoy!","consumerCTAEnabled":true,"consumerAppEnabled":true,"shortUrl":"pizza-man-wauwatosa-11500-west-burleigh-street","specialRequestsConfig":{"__typename":"SpecialRequestsConfig","enabled":true,"placeholderMessage":"We'll do our best to accommodate special requests but may not be able to honor all substitutes. Extra charges may apply."},"creditCardConfig":{"__typename":"RestaurantCreditCardConfig","amexAccepted":true,"tipEnabled":true},"giftCardConfig":{"__typename":"GiftCardConfig","redemptionAllowed":false,"hasGiftCardsExtension":false,"supportVerificationCode":false,"purchaseAllowed":false},"curbsidePickupConfig":{"__typename":"CurbsidePickupConfig","enabled":false,"enabledV2":false},"i18n":{"__typename":"I18n","currency":"USD","locale":"en-US","country":"US"},"loyaltyConfig({\"supportedAccrualTypes\":[\"CHECK_TOTAL\",\"VISIT\"]})":{"__typename":"LoyaltyConfig","loyaltySignupEnabled":true,"loyaltyRedemptionEnabled":true,"programName":"Pizza Man Rewards","rewardType":"CASHBACK"},"giftCardLinks":{"__typename":"GiftCardLinks","purchaseLink":null},"socialMediaLinks":{"__typename":"SocialMediaLinks","facebookLink":"https:\u002F\u002Fwww.facebook.com\u002Fpizzamanwi\u002F","twitterLink":null,"instagramLink":"https:\u002F\u002Fwww.instagram.com\u002Fpizzamanwi\u002F","resturantLink":null},"schedule":{"__typename":"Schedule","asapAvailableForDelivery":false,"asapAvailableForTakeout":false,"todaysHoursForDelivery":null,"upcomingSchedules":[{"__typename":"UpcomingSchedules","behavior":"DELIVERY","dailySchedules":[{"__typename":"DailySchedule","date":"2026-04-05","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-06","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-07","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-08","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-09","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-10","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-11","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]}]},{"__typename":"UpcomingSchedules","behavior":"TAKE_OUT","dailySchedules":[{"__typename":"DailySchedule","date":"2026-04-05","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:30","endTime":"20:00"}]},{"__typename":"DailySchedule","date":"2026-04-06","overrideDescription":null,"servicePeriods":[]},{"__typename":"DailySchedule","date":"2026-04-07","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"16:00","endTime":"20:00"}]},{"__typename":"DailySchedule","date":"2026-04-08","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:00","endTime":"20:00"}]},{"__typename":"DailySchedule","date":"2026-04-09","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:00","endTime":"21:00"}]},{"__typename":"DailySchedule","date":"2026-04-10","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:00","endTime":"21:00"}]},{"__typename":"DailySchedule","date":"2026-04-11","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:30","endTime":"21:00"}]}]}],"lastOrderConfiguration":"UNTIL_PREPTIME_CUTOFF"},"logoUrls":{"__typename":"ImageSet","small":"https:\u002F\u002Fd2s742iet3d3t1.cloudfront.net\u002Frestaurants\u002Frestaurant-193166000000000000\u002Frestaurant_1708379196.png?size=small"},"bannerUrls":{"__typename":"ImageSet","medium":"https:\u002F\u002Fd2s742iet3d3t1.cloudfront.net\u002Frestaurants\u002Frestaurant-193166000000000000\u002Fbanner_1705953006.jpg?size=medium"},"spotlightConfig":{"__typename":"SpotlightConfig","headerText":"","bodyText":""},"fundraisingConfig":{"__typename":"FundraisingConfig","campaignName":null,"campaignDescription":null,"campaignLogoURL":null,"donationType":null,"donationAmounts":null,"active":false,"guestLegalDisclosure":null,"causeParentName":null},"packagingConfig":{"__typename":"PackagingConfig","enabled":false,"guestMessage":null,"items":[]},"surchargingConfig":null,"managementSetGuid":"d35ef834-2a6f-4500-b35f-39dc7efbfc5f"},"restaurantV2({\"guid\":\"a1921791-c499-4634-b2e5-85fafacc945c\"})":{"__typename":"Restaurant","guid":"a1921791-c499-4634-b2e5-85fafacc945c","name":"Pizza Man - Wauwatosa","whiteLabelName":"Pizza Man - Wauwatosa","location":{"__typename":"Location","address1":"11500 West Burleigh Street","address2":null,"city":"Wauwatosa","state":"WI","zip":"53222","phone":"4142492000","latitude":43.077969,"longitude":-88.056469,"administrativeArea":"WI","country":"US"},"minimumTakeoutTime":60,"minimumDeliveryTime":0,"timeZoneId":"America\u002FChicago","cuisineType":"Pizza","hasOnlineOrderingModule":false,"hasToastLocalModule":false,"description":"Come in and enjoy!","consumerCTAEnabled":true,"consumerAppEnabled":true,"shortUrl":"pizza-man-wauwatosa-11500-west-burleigh-street","specialRequestsConfig":{"__typename":"SpecialRequestsConfig","enabled":true,"placeholderMessage":"We'll do our best to accommodate special requests but may not be able to honor all substitutes. Extra charges may apply."},"creditCardConfig":{"__typename":"RestaurantCreditCardConfig","amexAccepted":true,"tipEnabled":true},"giftCardConfig":{"__typename":"GiftCardConfig","redemptionAllowed":false,"hasGiftCardsExtension":false,"supportVerificationCode":false,"purchaseAllowed":false},"curbsidePickupConfig":{"__typename":"CurbsidePickupConfig","enabled":false,"enabledV2":false},"i18n":{"__typename":"I18n","currency":"USD","locale":"en-US","country":"US"},"loyaltyConfig({\"supportedAccrualTypes\":[\"CHECK_TOTAL\",\"VISIT\"]})":{"__typename":"LoyaltyConfig","loyaltySignupEnabled":true,"loyaltyRedemptionEnabled":true,"programName":"Pizza Man Rewards","rewardType":"CASHBACK"},"giftCardLinks":{"__typename":"GiftCardLinks","purchaseLink":null},"socialMediaLinks":{"__typename":"SocialMediaLinks","facebookLink":"https:\u002F\u002Fwww.facebook.com\u002Fpizzamanwi\u002F","twitterLink":null,"instagramLink":"https:\u002F\u002Fwww.instagram.com\u002Fpizzamanwi\u002F","resturantLink":null},"schedule":{"__typename":"Schedule","asapAvailableForDelivery":false,"asapAvailableForTakeout":false,"todaysHoursForDelivery":null,"upcomingSchedules":[{"__typename":"UpcomingSchedules","behavior":"DELIVERY","dailySchedules":[{"__typename":"DailySchedule","date":"2026-04-05","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-06","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-07","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-08","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-09","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-10","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-11","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]}]},{"__typename":"UpcomingSchedules","behavior":"TAKE_OUT","dailySchedules":[{"__typename":"DailySchedule","date":"2026-04-05","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:30","endTime":"20:00"}]},{"__typename":"DailySchedule","date":"2026-04-06","overrideDescription":null,"servicePeriods":[]},{"__typename":"DailySchedule","date":"2026-04-07","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"16:00","endTime":"20:00"}]},{"__typename":"DailySchedule","date":"2026-04-08","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:00","endTime":"20:00"}]},{"__typename":"DailySchedule","date":"2026-04-09","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:00","endTime":"21:00"}]},{"__typename":"DailySchedule","date":"2026-04-10","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:00","endTime":"21:00"}]},{"__typename":"DailySchedule","date":"2026-04-11","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:30","endTime":"21:00"}]}]}],"lastOrderConfiguration":"UNTIL_PREPTIME_CUTOFF"},"logoUrls":{"__typename":"ImageSet","small":"https:\u002F\u002Fd2s742iet3d3t1.cloudfront.net\u002Frestaurants\u002Frestaurant-193166000000000000\u002Frestaurant_1708379196.png?size=small"},"bannerUrls":{"__typename":"ImageSet","medium":"https:\u002F\u002Fd2s742iet3d3t1.cloudfront.net\u002Frestaurants\u002Frestaurant-193166000000000000\u002Fbanner_1705953006.jpg?size=medium"},"spotlightConfig":{"__typename":"SpotlightConfig","headerText":"","bodyText":""},"fundraisingConfig":{"__typename":"FundraisingConfig","campaignName":null,"campaignDescription":null,"campaignLogoURL":null,"donationType":null,"donationAmounts":null,"active":false,"guestLegalDisclosure":null,"causeParentName":null},"packagingConfig":{"__typename":"PackagingConfig","enabled":false,"guestMessage":null,"items":[]},"surchargingConfig":null,"managementSetGuid":"d35ef834-2a6f-4500-b35f-39dc7efbfc5f","onlineOrderingEnabled":false,"toastLocalEnabled":false},"promoBanners({\"input\":{\"restaurantGuid\":\"a1921791-c499-4634-b2e5-85fafacc945c\"}})":{"__typename":"PromoBannerResponse","promoCodeBanners":[],"loyaltyBanners":[],"deliveryBanners":[]},"diningOptions({\"input\":{\"includeBehaviors\":[],\"restaurantGuid\":\"a1921791-c499-4634-b2e5-85fafacc945c\"}})":[{"__typename":"DiningOption","behavior":"TAKE_OUT","guid":"fc7c98d6-ea51-4943-b36a-1e6ff12954af","asapSchedule":{"__typename":"AsapSchedule","availableNow":false},"futureSchedule":{"__typename":"FutureSchedule","dates":[]}}],"restaurants({\"guids\":[\"a1921791-c499-4634-b2e5-85fafacc945c\"]})":[{"__typename":"Restaurant","guid":"a1921791-c499-4634-b2e5-85fafacc945c","timeZoneId":"America\u002FChicago","hasOnlineOrderingModule":false,"onlineOrderingEnabled":false,"toastLocalEnabled":false,"deliveryProviders":[{"__typename":"DeliveryProviderConfig","enabled":false,"provider":"DOORDASH","pending":false},{"__typename":"DeliveryProviderConfig","enabled":true,"provider":"UBER","pending":false}],"deliveryServiceAvailability":{"__typename":"DeliveryServiceAvailability","available":false},"schedule":{"__typename":"Schedule","asapAvailableForDelivery":false,"asapAvailableForTakeout":false,"todaysHoursForTakeout":null,"todaysHoursForDelivery":null,"upcomingSchedules":[{"__typename":"UpcomingSchedules","behavior":"DELIVERY","dailySchedules":[{"__typename":"DailySchedule","date":"2026-04-05","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-06","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-07","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-08","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-09","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-10","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]},{"__typename":"DailySchedule","date":"2026-04-11","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"08:00","endTime":"03:45"}]}]},{"__typename":"UpcomingSchedules","behavior":"TAKE_OUT","dailySchedules":[{"__typename":"DailySchedule","date":"2026-04-05","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:30","endTime":"20:00"}]},{"__typename":"DailySchedule","date":"2026-04-06","overrideDescription":null,"servicePeriods":[]},{"__typename":"DailySchedule","date":"2026-04-07","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"16:00","endTime":"20:00"}]},{"__typename":"DailySchedule","date":"2026-04-08","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:00","endTime":"20:00"}]},{"__typename":"DailySchedule","date":"2026-04-09","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:00","endTime":"21:00"}]},{"__typename":"DailySchedule","date":"2026-04-10","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:00","endTime":"21:00"}]},{"__typename":"DailySchedule","date":"2026-04-11","overrideDescription":null,"servicePeriods":[{"__typename":"ServicePeriod","startTime":"11:30","endTime":"21:00"}]}]}]},"name":"Pizza Man - Wauwatosa","whiteLabelName":"Pizza Man - Wauwatosa","shortUrl":"pizza-man-wauwatosa-11500-west-burleigh-street","location":{"__typename":"Location","address1":"11500 West Burleigh Street","address2":null,"city":"Wauwatosa","state":"WI","zip":"53222","phone":"4142492000","latitude":43.077969,"longitude":-88.056469,"administrativeArea":"WI","country":"US"},"bookingConfig":{"__typename":"BookingRestaurantConfig","onlineReservationsEnabled":false}}],"adsManager":{"__typename":"AdsManagerQuery","adsManagerConversionTagsConfig({\"guid\":\"a1921791-c499-4634-b2e5-85fafacc945c\"})":{"__typename":"AdsManagerConversionTagsConfig","managementSetGuid":"d35ef834-2a6f-4500-b35f-39dc7efbfc5f","restaurantConversionsDataList":[{"__typename":"AdsManagerRestaurantConversionsData","restaurantGuid":"bb31e984-77f6-4751-b309-9d0be7117b9e","googleConversionsData":{"__typename":"GoogleConversionsData","tagId":"AW-17550819009","conversionLabels":[{"__typename":"GoogleConversionLabel","label":"0qlYCKmk6pgbEMH98LBB","type":"PURCHASE"}]},"metaConversionsData":{"__typename":"MetaConversionsData","pixelId":null}},{"__typename":"AdsManagerRestaurantConversionsData","restaurantGuid":"a1921791-c499-4634-b2e5-85fafacc945c","googleConversionsData":{"__typename":"GoogleConversionsData","tagId":null,"conversionLabels":null},"metaConversionsData":{"__typename":"MetaConversionsData","pixelId":null}},{"__typename":"AdsManagerRestaurantConversionsData","restaurantGuid":"bf80b96f-09b0-444a-8a89-130e671e6b0e","googleConversionsData":{"__typename":"GoogleConversionsData","tagId":null,"conversionLabels":null},"metaConversionsData":{"__typename":"MetaConversionsData","pixelId":null}}]},"adsManagerRestaurantConversionsData({\"guid\":\"a1921791-c499-4634-b2e5-85fafacc945c\"})":{"__typename":"AdsManagerRestaurantConversionsData","restaurantGuid":"a1921791-c499-4634-b2e5-85fafacc945c","metaConversionsData":{"__typename":"MetaConversionsData","pixelId":null},"googleConversionsData":{"__typename":"GoogleConversionsData","tagId":null,"conversionLabels":null}}}}};
+    window.__FLAGS_STATE__ = {"dot-food-waste-secondary-sales":false,"dot-fundraising-surcharging":true,"nvs-catering-discovery-toast-local":true,"nvs-catering-toast-local":true,"nvs-marketplace-lead-forms":true,"oo-ads-pixel-client-render":false,"oo-alert-closing-soon":false,"oo-convo-ordering-enabled":false,"oo-cookie-storage-cart-guid":true,"oo-ecomm-category-page":true,"oo-ecomm-scheduled-orders":true,"oo-ecomm-shipping-alcohol-restrictions":true,"oo-ecomm-variation-groups":false,"oo-enable-menu-change-location":true,"oo-ethyca-ads":true,"oo-ethyca-phase-one":true,"oo-ethyca-us-rollout":true,"oo-full-width-when-no-margin":true,"oo-gia-auth-kill-switch":false,"oo-guest-analytics":true,"oo-intl-payments-iframe":true,"oo-locale-selector":false,"oo-menu-cache-first":100,"oo-order-confirmation-v2":25,"oo-reusable-flag-alpha":true,"oo-reusable-flag-golf":true,"oo-server-search":true,"oo-spi-surcharging-fe":true,"oo-spi-temp-events-enabled":false,"oo-toast-cash-spend":false,"oo-tracking-disabled":false,"oo-entp-freedompay-ecomm-enabled":false,"oo-cart-menu-item-redesign":25,"oo-order-review-screen":true,"stp-oo-gia-auth-rollout":false,"stp-toast-cash-wallet-web-enabled":true,"intl-address-country-logic-error-handling":false,"intl-oo-cookie-banner":true,"nv5-sites-web-caching-enabled":true,"nv5-sites-web-cache-ttl":600,"oo-gtm-content-security-policy":true,"oo-head-stream":false};
+    window.__FLAGS_CONTEXT__ = {"key":"a1921791-c499-4634-b2e5-85fafacc945c","custom":{"mgmt_group":"d35ef834-2a6f-4500-b35f-39dc7efbfc5f"}};
+    window.__IS_MOBILE__ = false;
+    window.__IS_BOT__ = false;
+    window.__I18NEXT_STATE__ = {"language":"en-US"};
+    window.__REFERRER__ = '';
+    window.__SSR_STATUS__ = '';
+    window.__SSR_ERR_MSG__ = 'null';
+    window.__ETHYCA_ENABLED__ = true;</script><script>(function (h, o, u, n, d) {
+        h = h[d] = h[d] || { q: [], onReady: function (c) { h.q.push(c) } }
+        d = o.createElement(u); d.async = 1; d.src = n
+        n = o.getElementsByTagName(u)[0]; n.parentNode.insertBefore(d, n)
+      })(window, document, 'script', 'https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js', 'DD_RUM')
+      window.DD_RUM.onReady(function () {
+        window.DD_RUM.init({
+          clientToken: 'pub42715a09f9a12b1dd63162ff54b9b2b3',
+          applicationId: 'b8973e2d-9c80-4e55-93a3-3c9e994702ea',
+          site: 'datadoghq.com',
+          service: 'online-ordering',
+          env: 'production',
+          version: '3171',
+          sessionSampleRate: 1,
+        sessionReplaySampleRate: 0,
+        trackUserInteractions: true,
+        trackResources: true,
+        trackLongTasks: true,
+        trackingConsent: 'not-granted',
+        defaultPrivacyLevel: 'mask-user-input',
+          });
+        })</script></head><body><div id="content"><a href="#main" class="skip-link">Skip to Main content</a><div class="tsw-app-wrapper" id="tsw-app-wrapper"><div class="defaultTemplate"><div class="Toastify" id="mainToastContainer"></div><div class="Toastify" id="overModals"></div><div class="Toastify" id="giftCardPromoCodeToastContainer"></div><nav class="globalNav stickyNav" id="globalNav" aria-label="Main navigation"><div class="navWrapper withShadow" style="background-color:rgba(255,255,255,1);color:#252525"><div class="nav header-layout-1" data-testid="nav-header-layout-1"><ul class="left"><li nav-role="logo" class=""><div class="logoTitle" data-testid="logoTitle"><a aria-label="Pizza Man - Wauwatosa" class="" data-testid="logoLinkId" href="/online/pizza-man-wauwatosa-11500-west-burleigh-street"><div class="logoWrapper"><h1 class="hiddenHeader">Pizza Man - Wauwatosa</h1><img src="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-193166000000000000/restaurant_1708379196.png?size=small" srcSet="" loading="eager" alt="" class="logo imageCover"/><div class="backgroundCircle hidden" style="background-color:rgba(255,255,255,1);color:#252525"></div></div></a></div></li></ul><ul class="middle"><li role="none" class="hidden-sm-down center" nav-role="links"><div role="none" class="navLinks"></div></li></ul><div id="navigation list"></div><div role="none" class="right"><ul role="none" nav-role="primary-cta"><li><button class="targetAction" aria-label="Cart with 0 items" disabled=""><div aria-hidden="true" class="cartPopoverTarget disabled"><svg class="cartIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none"><path d="M5.12112 16.5H12.6368V5.22649H1.36328V16.5L3.2422 14.6211L5.12112 16.5ZM5.12112 16.5V5.22649M3.24219 5.22652V3.59813C3.24219 3.59813 3.21088 1.5 5.12111 1.5C6.96871 1.5 7.00003 3.59813 7.00003 3.59813M7.00003 3.59813V5.22652M7.00003 3.59813C7.00003 3.59813 6.96871 1.5 8.87895 1.5C10.7266 1.5 10.7579 3.59813 10.7579 3.59813V5.22652" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div>0</div></div></button></li><li><button class="userNavSignInBtn" data-testid="userNav" tabindex="0" aria-label="Sign in" aria-haspopup="dialog">Sign in</button></li></ul></div></div></div></nav><div class="menuHeader" data-testid="menu-header"><div class="fulfillmentWarningBanner"><i class="inline-block leading-none" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="inline-block align-middle h-4 w-4"><path d="M12 11.7v5m9-4.7a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 9.143a1 1 0 100-2 1 1 0 000 2z" fill="currentColor"></path></svg></i><span>Currently not accepting online orders</span></div><div class="heroBanner" data-testid="hero-with-image"><div class="heroImage" data-testid="hero-image"><img src="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-193166000000000000/banner_1705953006.jpg?size=medium" srcSet="" loading="lazy" alt="Banner image" class="imageCover" aria-hidden="true"/></div></div><div class="contentWrapper paddedContentWrapper"><div class="content paddedContent"><div data-testid="headerContent" class="headerContent"><h2 class="heading">Pizza Man - Wauwatosa</h2><div class="diningOptionBehaviorInfo"><span>11500 West Burleigh Street, Wauwatosa, WI</span></div><div class="hidden-sm-down"></div></div><div data-testid="fulfillment-panel" class="fulfillmentPanel"><div class="fulfillmentToggle"></div><div class="fulfillmentSummaries"></div></div></div></div></div><div class="pageContent" data-testid="order-page" role="main" id="main" aria-label="menu" tabindex="0"><div class="onlineOrderingUnavailable">Online ordering is currently unavailable. Please contact the restaurant to place an order.</div></div><div role="region" class="templateFooter" id="footer"><h2 class="name">Pizza Man - Wauwatosa Location and Ordering Hours</h2><div class="locations"><div class="locationDescription" data-testid="footer-location"><div class="locationPhone" data-testid="location-phone"><a href="tel:+14142492000">(414) 249-2000</a></div><div class="locationAddress"><a href="https://google.com/maps/place?q=Pizza+Man+-+Wauwatosa%2C+11500+West+Burleigh+Street%2C+Wauwatosa%2C+WI+53222" rel="noopener noreferrer" target="_blank">11500 West Burleigh Street, Wauwatosa, WI 53222</a></div><div class="locationSchedule"><div><div class="status" data-testid="open-status"><div><div class="circle open"></div><span><strong data-testid="open-status-text">Open now</strong><span aria-hidden="true"> • </span>Closes at 8PM</span></div></div><button class="hoursToggle" aria-haspopup="dialog"><strong>All hours</strong></button></div></div><div class="foodLinks"></div><div class="socialIcons"><a href="https://www.facebook.com/pizzamanwi/" data-testid="social-link" target="_blank" rel="noopener noreferrer"><img src="https://d28f3w0x9i80nq.cloudfront.net/icons/facebook-white.svg" srcSet="" loading="lazy" alt="Facebook logo" class="imageCover" style="filter:brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(265deg) brightness(101%) contrast(101%)"/></a><a href="https://www.instagram.com/pizzamanwi/" data-testid="social-link" target="_blank" rel="noopener noreferrer"><img src="https://d28f3w0x9i80nq.cloudfront.net/icons/instagram-white.svg" srcSet="" loading="lazy" alt="Instagram logo" class="imageCover" style="filter:brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(65deg) brightness(102%) contrast(102%)"/></a></div></div></div><div class="legal-container" role="contentinfo"><div class="poweredBy" data-testid="powered-by-toast"><a href="https://toasttab.com/local" aria-label="powered by toast (opens in a new tab)" class="" target="_blank" rel="noopener noreferrer"><img src="https://d28f3w0x9i80nq.cloudfront.net/icons/toast-logo-filled.svg" srcSet="" loading="lazy" alt="Toast logo" class="imageCover" aria-hidden="true"/><img src="https://d28f3w0x9i80nq.cloudfront.net/icons/powered-by-toast-text.svg" srcSet="" loading="lazy" alt="powered by toast" class="poweredByToastText imageCover"/></a></div><ul class="legal"><li><a href="https://pos.toasttab.com/terms-of-service/#diner-tos" rel="noopener noreferrer" target="_blank">Terms of Service</a></li><li><span>|</span><a href="https://pos.toasttab.com/privacy" rel="noopener noreferrer" target="_blank">Privacy Statement</a></li><li><span>|</span><a href="https://pos.toasttab.com/privacy#addendum-a" rel="noopener noreferrer" target="_blank">CA Privacy Statement</a></li></ul></div></div></div></div></div><script nonce="3a865cd0731915781465014e62632f5b">(function () {
+      // Load all webpack chunks in parallel
+      var jsFiles = [
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/runtime_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/react_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/toast-libs_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/polyfills_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/utils_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/analytics_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/ui_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/forms_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/apollo_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/datetime_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/maps_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/content_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/vendor_1775146375.min.js" ,
+        
+        "https://d28f3w0x9i80nq.cloudfront.net/app/public_1775146375.min.js" 
+        
+      ];
+
+      // Create script tags for all chunks to load in parallel
+      jsFiles.forEach(function (src) {
+        var s = document.createElement("script");
+        s.nonce = "3a865cd0731915781465014e62632f5b";
+        s.type = "text/javascript";
+        s.async = true; // Load in parallel
+        s.src = src;
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+      });
+    })();</script><div id="session" data-content="eyJpZCI6Ijc4M3cwZ2ZIZ3Q0cnhCRW9qOUFSaVNpTHZmTGJsdWg3NXVuQjBRaENZNDAiLCJpc3N1ZWRBdCI6IjIwMjYtMDQtMDVUMTg6MTM6MzBaIiwiZXhwaXJlc0F0IjoiMjAyNi0wNC0wNVQxOToxMzozMFoifQ&#x3D;&#x3D;"/></body></html>
